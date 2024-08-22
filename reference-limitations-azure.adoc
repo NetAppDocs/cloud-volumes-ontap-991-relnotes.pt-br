@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: reference-limitations-azure.html 
+keywords: limitations, ha, azure, pay-as-you-go, paygo, cloud solution provider, nfsv3 
+summary: Essas limitações conhecidas são específicas do Cloud Volumes ONTAP no Microsoft Azure. 
+---
+= Limitações conhecidas no Azure
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+As seguintes limitações conhecidas são específicas do Cloud Volumes ONTAP no Microsoft Azure. Certifique-se de também rever link:reference-limitations.html["Limitações em todos os provedores de nuvem"].
+
+
+
+== Limitações do Flash Cache
+
+O tipo de VM Standard_L8s_v2 inclui armazenamento NVMe local, que o Cloud Volumes ONTAP usa como _Flash Cache_. Observe as seguintes limitações para o Flash Cache:
+
+* A compactação deve ser desativada em todos os volumes para aproveitar as melhorias de desempenho do Flash Cache.
++
+Não é possível escolher a eficiência de storage ao criar um volume no BlueXP  ou criar um volume e, em seguida http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/GUID-8508A4CB-DB43-4D0D-97EB-859F58B29054.html["Desative a compressão de dados usando a CLI"^], .
+
+* O reaquecimento do cache após uma reinicialização não é suportado com o Cloud Volumes ONTAP.
+
+
+
+
+== Limitações DE HA
+
+As limitações a seguir afetam os pares de HA do Cloud Volumes ONTAP no Microsoft Azure:
+
+* NFSv4 não é suportado. NFSv3 é suportado.
+* Pares HA não são suportados em algumas regiões.
++
+https://cloud.netapp.com/cloud-volumes-global-regions["Consulte a lista de regiões do Azure suportadas"^]
+
+

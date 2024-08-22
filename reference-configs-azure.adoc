@@ -1,0 +1,245 @@
+---
+sidebar: sidebar 
+permalink: reference-configs-azure.html 
+keywords: vm, explore, standard, premium, byol, capacity, maximum, virtual machine, Cloud Volumes ONTAP, supported, configurations, disks, sizes 
+summary: Várias configurações do Cloud Volumes ONTAP são suportadas no Azure. 
+---
+= Configurações compatíveis no Azure
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Várias configurações do Cloud Volumes ONTAP são suportadas no Azure.
+
+
+
+== Configurações suportadas por licença
+
+O Cloud Volumes ONTAP está disponível no Azure como um sistema de nó único e como um par de nós de alta disponibilidade (HA) para tolerância de falhas e operações ininterruptas.
+
+A atualização de um único sistema de nós para um par de HA não é compatível. Se você quiser alternar entre um único sistema de nós e um par de HA, precisará implantar um novo sistema e replicar dados do sistema existente para o novo sistema.
+
+
+
+=== Sistemas de nó único
+
+Você pode escolher entre as seguintes configurações ao implantar o Cloud Volumes ONTAP como um sistema de nó único no Azure:
+
+[cols="h,d,d,d,d,d,d"]
+|===
+|  | Freemium | PAYGO Explore | Padrão PAYGO | PAYGO Premium | Licença baseada em nó | Licença baseada em capacidade 
+
+
+| Capacidade máxima do sistema (discos e armazenamento de objetos) | 500 GiB | 2 TIB 1 | 10 TIB | 368 TIB | 368 TIB por licença | 2 PIB 
+
+
+| Tipos de máquinas virtuais compatíveis  a| 
+* DS4_v2
+* DS5_v2
+* DS13_v2
+* DS14_v2
+* DS15_v2
+* E4s_v3
+* E8s_v3
+* E32s_v3 2
+* E48s_v3 2
+* E64is_v3 2
+* E80ids_v4 2
+* L8s_v2 3
+
+ a| 
+* E4s_v3
+
+ a| 
+* DS4_v2
+* DS13_v2
+* E8s_v3
+
+ a| 
+* DS5_v2
+* DS14_v2
+* DS15_v2
+* E32s_v3 2
+* E48s_v3 2
+* E64is_v3 2
+* E80ids_v4 2
+
+ a| 
+* DS4_v2
+* DS5_v2
+* DS13_v2
+* DS14_v2
+* DS15_v2
+* E4s_v3
+* E8s_v3
+* E32s_v3 2
+* E48s_v3 2
+* E64is_v3 2
+* E80ids_v4 2
+* L8s_v2 3
+
+ a| 
+* DS4_v2
+* DS5_v2
+* DS13_v2
+* DS14_v2
+* DS15_v2
+* E4s_v3
+* E8s_v3
+* E32s_v3 2
+* E48s_v3 2
+* E64is_v3 2
+* E80ids_v4 2
+* L8s_v2 3
+
+
+
+
+| Tipos de disco suportados 4 6+| Discos gerenciados HDD padrão, discos gerenciados SSD padrão e discos gerenciados SSD Premium 
+|===
+Notas:
+
+. A disposição de dados em camadas no storage Blob do Azure não é compatível com o PAYGO Explore.
+. Esse tipo de VM usa um https://docs.microsoft.com/en-us/azure/virtual-machines/windows/disks-enable-ultra-ssd["SSD ultra"^] para VNVRAM, que fornece melhor desempenho de gravação.
+. Esse tipo de VM inclui storage NVMe local, que o Cloud Volumes ONTAP usa como _Flash Cache_. O Flash Cache acelera o acesso aos dados por meio do armazenamento em cache inteligente em tempo real dos dados do usuário lidos recentemente e dos metadados do NetApp. Ele é eficaz para workloads com uso intenso de leitura aleatória, incluindo bancos de dados, e-mail e serviços de arquivos. A compactação deve ser desativada em todos os volumes para aproveitar as melhorias de desempenho do Flash Cache. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-flash-cache.html["Saiba mais"^].
+. A alta velocidade de gravação é suportada em todos os tipos de instância ao usar um sistema de nó único. Você pode ativar a alta velocidade de gravação do BlueXP  durante a implantação ou a qualquer momento depois. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-write-speed.html["Saiba mais sobre como escolher uma velocidade de escrita"^].
+. O desempenho de gravação aprimorado é habilitado ao usar SSDs.
+. Para obter suporte à região do Azure, https://cloud.netapp.com/cloud-volumes-global-regions["Regiões globais do Cloud volumes"^] consulte .
+. O Cloud Volumes ONTAP pode ser executado em uma instância de VM reservada ou sob demanda do seu provedor de nuvem. As soluções que usam outros tipos de instância de VM não são suportadas.
+
+
+
+
+=== Pares HA
+
+Você pode escolher entre as configurações a seguir ao implantar o Cloud Volumes ONTAP como um par de HA no Azure.
+
+[cols="h,d,d,d,d,d"]
+|===
+|  | Freemium | Padrão PAYGO | PAYGO Premium | Licença baseada em nó | Licença baseada em capacidade 
+
+
+| Capacidade máxima do sistema (discos e armazenamento de objetos) | 500 GiB | 10 TIB | 368 TIB | 368 TIB por licença | 2 PIB 
+
+
+| Tipos de máquinas virtuais compatíveis  a| 
+* DS4_v2
+* DS5_v2 1
+* DS13_v2
+* DS14_v2 1
+* DS15_v2 1
+* E8s_v3
+* E48s_v3 1
+* E80ids_v4 1,2
+
+ a| 
+* DS4_v2
+* DS13_v2
+
+ a| 
+* DS5_v2 1
+* DS14_v2 1
+* DS15_v2 1
+* E8s_v3
+* E48s_v3 1
+* E80ids_v4 1,2
+
+ a| 
+* DS4_v2
+* DS5_v2 1
+* DS13_v2
+* DS14_v2 1
+* DS15_v2 1
+* E8s_v3
+* E48s_v3 1
+* E80ids_v4 1,2
+
+ a| 
+* DS4_v2
+* DS5_v2 1
+* DS13_v2
+* DS14_v2 1
+* DS15_v2 1
+* E8s_v3
+* E48s_v3 1
+* E80ids_v4 1,2
+
+
+
+
+| Tipos de disco suportados 5+| Blobs de página premium 
+|===
+Notas:
+
+. O Cloud Volumes ONTAP dá suporte à alta velocidade de gravação com esses tipos de VM ao usar um par de HA. Você pode ativar a alta velocidade de gravação do BlueXP  durante a implantação ou a qualquer momento depois. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-write-speed.html["Saiba mais sobre como escolher uma velocidade de escrita"^].
+. Essa VM é recomendada somente quando o controle de manutenção do Azure for necessário. Não é recomendado para qualquer outro caso de uso devido ao preço mais alto.
+. O PAYGO Explore não é compatível com pares de HA no Azure.
+. Para obter suporte à região do Azure, https://cloud.netapp.com/cloud-volumes-global-regions["Regiões globais do Cloud volumes"^] consulte .
+. O Cloud Volumes ONTAP pode ser executado em uma instância de VM reservada ou sob demanda do seu provedor de nuvem. As soluções que usam outros tipos de instância de VM não são suportadas.
+
+
+
+
+== Tamanhos de disco suportados
+
+No Azure, um agregado pode conter até 12 discos com o mesmo tipo e tamanho.
+
+
+
+=== Sistemas de nó único
+
+Sistemas de nó único usam discos gerenciados do Azure. Os seguintes tamanhos de disco são suportados:
+
+[cols="3*"]
+|===
+| SSD premium | SSD padrão | HDD padrão 
+
+
+ a| 
+* 500 GiB
+* 1 TIB
+* 2 TIB
+* 4 TIB
+* 8 TIB
+* 16 TIB
+* 32 TIB
+
+ a| 
+* 100 GiB
+* 500 GiB
+* 1 TIB
+* 2 TIB
+* 4 TIB
+* 8 TIB
+* 16 TIB
+* 32 TIB
+
+ a| 
+* 100 GiB
+* 500 GiB
+* 1 TIB
+* 2 TIB
+* 4 TIB
+* 8 TIB
+* 16 TIB
+* 32 TIB
+
+
+|===
+
+
+=== Pares HA
+
+Os pares HA usam blobs de página Premium. Os seguintes tamanhos de disco são suportados:
+
+* 500 GiB
+* 1 TIB
+* 2 TIB
+* 4 TIB
+* 8 TIB
+

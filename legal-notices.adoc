@@ -1,0 +1,56 @@
+---
+sidebar: sidebar 
+permalink: legal-notices.html 
+keywords: copyrights, notice, trademarks, patents, privacy, open source 
+summary: Avisos legais fornecem acesso a declarações de direitos autorais, marcas registradas, patentes e muito mais. 
+---
+= Avisos legais
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Avisos legais fornecem acesso a declarações de direitos autorais, marcas registradas, patentes e muito mais.
+
+
+
+== Direitos de autor
+
+link:https://www.netapp.com/company/legal/copyright/["https://www.netapp.com/company/legal/copyright/"^]
+
+
+
+== Marcas comerciais
+
+NetApp, o logotipo DA NetApp e as marcas listadas na página de marcas comerciais da NetApp são marcas comerciais da NetApp, Inc. Outros nomes de produtos e empresas podem ser marcas comerciais de seus respetivos proprietários.
+
+link:https://www.netapp.com/company/legal/trademarks/["https://www.netapp.com/company/legal/trademarks/"^]
+
+
+
+== Patentes
+
+Uma lista atual de patentes de propriedade da NetApp pode ser encontrada em:
+
+link:https://www.netapp.com/pdf.html?item=/media/11887-patentspage.pdf["https://www.netapp.com/pdf.html?item=/media/11887-patentspage.pdf"^]
+
+
+
+== Política de privacidade
+
+link:https://www.netapp.com/company/legal/privacy-policy/["https://www.netapp.com/company/legal/privacy-policy/"^]
+
+
+
+== Código aberto
+
+Os arquivos de aviso fornecem informações sobre direitos autorais de terceiros e licenças usadas no software NetApp.
+
+* link:media/notice_cloud_volumes_ontap_9.9.1_aws.pdf["Aviso para o Mediador Cloud Volumes ONTAP 9.9.1 na AWS"^]
+* link:media/notice_cloud_volumes_ontap_9.9.1_google.pdf["Aviso para o Mediador do Cloud Volumes ONTAP 9.9.1 no Google Cloud"^]
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2876856["Aviso para ONTAP 9.9,1"^]
+
