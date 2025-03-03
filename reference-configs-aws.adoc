@@ -201,4 +201,4 @@ As larguras de banda mostradas na tabela abaixo correspondem aos limites documen
 
 == Regiões suportadas
 
-Para obter suporte à região da AWS, https://cloud.netapp.com/cloud-volumes-global-regions["Regiões globais do Cloud volumes"^] consulte .
+Para obter suporte à região da AWS, https://bluexp.netapp.com/cloud-volumes-global-regions["Regiões globais do Cloud volumes"^] consulte .

@@ -109,7 +109,7 @@ Notas:
 . Esse tipo de VM inclui storage NVMe local, que o Cloud Volumes ONTAP usa como _Flash Cache_. O Flash Cache acelera o acesso aos dados por meio do armazenamento em cache inteligente em tempo real dos dados do usuário lidos recentemente e dos metadados do NetApp. Ele é eficaz para workloads com uso intenso de leitura aleatória, incluindo bancos de dados, e-mail e serviços de arquivos. A compactação deve ser desativada em todos os volumes para aproveitar as melhorias de desempenho do Flash Cache. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-flash-cache.html["Saiba mais"^].
 . A alta velocidade de gravação é suportada em todos os tipos de instância ao usar um sistema de nó único. Você pode ativar a alta velocidade de gravação do BlueXP  durante a implantação ou a qualquer momento depois. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-write-speed.html["Saiba mais sobre como escolher uma velocidade de escrita"^].
 . O desempenho de gravação aprimorado é habilitado ao usar SSDs.
-. Para obter suporte à região do Azure, https://cloud.netapp.com/cloud-volumes-global-regions["Regiões globais do Cloud volumes"^] consulte .
+. Para obter suporte à região do Azure, https://bluexp.netapp.com/cloud-volumes-global-regions["Regiões globais do Cloud volumes"^] consulte .
 . O Cloud Volumes ONTAP pode ser executado em uma instância de VM reservada ou sob demanda do seu provedor de nuvem. As soluções que usam outros tipos de instância de VM não são suportadas.
 
 
@@ -179,7 +179,7 @@ Notas:
 . O Cloud Volumes ONTAP dá suporte à alta velocidade de gravação com esses tipos de VM ao usar um par de HA. Você pode ativar a alta velocidade de gravação do BlueXP  durante a implantação ou a qualquer momento depois. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-write-speed.html["Saiba mais sobre como escolher uma velocidade de escrita"^].
 . Essa VM é recomendada somente quando o controle de manutenção do Azure for necessário. Não é recomendado para qualquer outro caso de uso devido ao preço mais alto.
 . O PAYGO Explore não é compatível com pares de HA no Azure.
-. Para obter suporte à região do Azure, https://cloud.netapp.com/cloud-volumes-global-regions["Regiões globais do Cloud volumes"^] consulte .
+. Para obter suporte à região do Azure, https://bluexp.netapp.com/cloud-volumes-global-regions["Regiões globais do Cloud volumes"^] consulte .
 . O Cloud Volumes ONTAP pode ser executado em uma instância de VM reservada ou sob demanda do seu provedor de nuvem. As soluções que usam outros tipos de instância de VM não são suportadas.
 
 
